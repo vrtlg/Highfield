@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Highfield.Models.Response
+
+<div class="text-center">
+    <h1 class="display-4">Hire Vev</h1>
+
+<hr/>
+<h1>UserEntity</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>DOB</th>
+                <th>Fav. Colour</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var u in @Model.users){
+        <tr>
+            <td>@u.firstName</td>
+                <td>@u.lastName</td>
+                <td>@u.email</td>
+                <td>@u.dob</td>
+                <td>@u.favouriteColour</td>
+        </tr>
+    }
+        </tbody>
+    </table>
+    
+    <hr/>
+<h1>AgePlusTwenty</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Age</th>
+                <th>Age+20</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var u in @Model.ages){
+                <tr>
+                    <td>@u.userId</td>
+                    <td>@u.originalAge</td>
+                    <td>@u.agePlusTwenty</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr/>
+    <h1>TopColours</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Colour</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in @Model.topColours)
+            {
+                <tr>
+                    <td>@u.colour</td>
+                    <td>@u.count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
